@@ -1,6 +1,6 @@
 # Sonoff-Zigbee-Bridge-Pro-for-HA
 
-##Background
+## Background
 I have 25+ Sonoff units all flashed with Tasmota working over wifi in my Home Assistant installation.
 One of the major pieces of plant that I use HA to supervise is my "whole of house" Vallox ventillation system.
 This monitors the condition of the air centrally and in the event that it detects higher humidity it boosts the ventilation rate.
@@ -20,7 +20,7 @@ When you re-boot the bridge you will now be able to see that it will work as a Z
 However this is where you need to go back to the main menu and select configuaration then auto-configuration and configure the bridge for TCP.
 ![image](https://user-images.githubusercontent.com/56273663/234308947-d2d1088f-4871-4b1a-afae-7fad94e845ed.png)
 
-##Zigbee2mqtt
+## Zigbee2mqtt
 Now head over to HA and install Zigbee2mqtt.
 This is a very useful resource https://www.zigbee2mqtt.io/ but this is how I set up my config using edit as YAML
 ```
