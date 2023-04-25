@@ -8,3 +8,4 @@ Run script 1
 run cscript 2
 autoconfig
 instal zha
+https://www.youtube.com/watch?v=FH2KL-5riRQ
