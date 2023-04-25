@@ -9,3 +9,4 @@ run cscript 2
 autoconfig
 instal zha
 https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/
+https://dialedin.com.au/blog/sonoff-zbbridge-p-setup
