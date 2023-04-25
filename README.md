@@ -8,20 +8,39 @@ The instructions set out here provided a pretty good stating point.
 https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/
 However I found that the Tasmota on-line flasher is easier to use.
 https://tasmota.github.io/install/
-Apart from that just kee fololowing not-enough-tech's instuctions.
-You don't need to upload any file or re-size the parttion because unter tha latest Tasmota 12.5 it's all done for you.
-Just run the two Berry console scripts. The second one takes about 5 minutes so be very patient.
+Once you have got the Bridge to talk to your wifi, set it up with a static IP and remember that for latter mine is 19.168.2.110.
+Apart from that just keep following not-enough-tech's instuctions.
+You don't need to upload any file or re-size the partion because unter tha latest Tasmota 12.5 it's all done for you.
+Just run the two Berry console scripts. The second one takes about 5 minutes, so be very patient.
 When you re-boot the bridge you will now be able to see that it will work as a Zigbee co-ordinator.
 However this is where you need to go back to the main menu and select configuaration then auto-configuration and configure the bridge for TCP.
 ![image](https://user-images.githubusercontent.com/56273663/234308947-d2d1088f-4871-4b1a-afae-7fad94e845ed.png)
+Now head over to HA and install Zigbee2mqtt.
+This is a very useful resource https://www.zigbee2mqtt.io/ but this is how I set up my config using edit as YAML
+```
+data_path: /config/zigbee2mqtt
+socat:
+  enabled: false
+  master: pty,raw,echo=0,link=/tmp/ttyZ2M,mode=777
+  slave: tcp-listen:8485,keepalive,nodelay,reuseaddr,keepidle=1,keepintvl=1,keepcnt=5
+  options: "-d -d"
+  log: true
+mqtt:
+  server: mqtt://192.168.2.100:1883
+  basetopic: zigbee2mqtt
+  user: z2m-user
+  password: z2m-pass
+serial:
+  port: tcp://192.168.2.110:8888
+ota:
+  ikea_ota_use_test_url: false
+  update_check_interval: 1440
+  disable_automatic_update_check: false
+frontend:
+  port: 8080
+homeassistant: true
+zigbee_herdsman_debug: true
+```
+note do not include adapter: ezsp
 
-Normal Tasmo process
-solder in headre
-Use webflasher as 32-bit
-Add template
-Run script 1
-run cscript 2
-autoconfig
-instal zha
-
-https://dialedin.com.au/blog/sonoff-zbbridge-p-setup
+That's it really it should be up and running!
