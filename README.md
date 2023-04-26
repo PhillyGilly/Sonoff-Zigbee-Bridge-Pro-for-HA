@@ -55,3 +55,7 @@ note: **do not include adapter: ezsp** whatever it says in the instructions.
 That's it really it should be up and running!
 ![image](https://user-images.githubusercontent.com/56273663/234315595-5bd7bc18-2188-4ab3-8ea7-c872efa20bdb.png)
 
+One final point about updating the firmware on IKEA Tradfri buttons.
+You  can do this using the OTA function, but you have to keep pressing the button to keep the button awake until you get confirmation that the OTA update has started. Oh, and you are going to use a lot of battery as it is a very long/slow process.
+
+![image](https://user-images.githubusercontent.com/56273663/234537357-b3986f73-ab8c-4c02-b7c6-58b889c5275e.png)
