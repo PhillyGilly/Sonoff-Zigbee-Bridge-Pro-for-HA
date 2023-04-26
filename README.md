@@ -53,6 +53,7 @@ zigbee_herdsman_debug: true
 note: **do not include adapter: ezsp** whatever it says in the instructions.
 
 That's it really it should be up and running!
+
 ![image](https://user-images.githubusercontent.com/56273663/234315595-5bd7bc18-2188-4ab3-8ea7-c872efa20bdb.png)
 
 One final point about updating the firmware on IKEA Tradfri buttons.
