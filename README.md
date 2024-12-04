@@ -74,25 +74,26 @@ The conversion process was remarkably easy.
 1. I used the OTA firmware update to update to Tasmota 14.3.0.7(b941400-zbbrdgpro). 
 2. Changed the Tasmota Template:
 {"NAME":"Sonoff Zigbee Pro","GPIO":[0, 0, 576, 0, 480, 0, 0, 0, 0, 1, 1, 5792, 0, 0, 0, 3552, 0, 320, 5793, 3584, 0, 640, 608, 32, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 ],"FLAG":0,"BASE":1}
-3. Download and save the following files:
+3. Downloaded and saved the following files:
    [SonoffZBPro Router HEX](https://github.com/arendst/Tasmota/blob/development/tools/fw_SonoffZigbeeBridgePro_router_only_cc2652/SonoffZBPro_router_20220125.hex);
    [Sonoff ZBPro Flasher](https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/sonoff_zb_pro_flasher.be);
    [CC2652 Flasher](https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/cc2652_flasher.be);
    [IntelHex](https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/intelhex.be);
-5. Install all the downloaded files on the Sonoff using the File Manager utility.
-6. Run these four lines of code in the Berry console to activate the HEX Firmware
+5. Installed all the downloaded files on the Sonoff using the File Manager utility.
+6. Ran these four lines of code in the Berry console to activate the HEX Firmware
 ```
 import sonoff_zb_pro_flasher as cc
 cc.load("SonoffZBPro_router_20220125.hex")
 cc.check()
 cc.flash()
 ```
-Wait about 5 minutes until everything has run through then power cycle the Sonoff.
-Finally press the reset button and the green LED lights, wait 5 seconds and press it again, the blue LED flashes twice and the Sonoff is in pairing mode ready to join ZHA as a router.
+Waited about 5 minutes until everything had run through, then power cycle the Sonoff.
+Finally I pressed the reset button until the green LED lit and released it, waited 5 seconds and pressed it again, the blue LED flashed twice and the Sonoff was in pairing mode ready to join ZHA as a router.
+Here it is alongside the Yellow co-ordinator.
 
 ![image](https://github.com/user-attachments/assets/413dee63-54a5-4966-942c-6122e0192bdb)
 
 
 
-Thanks to @Deressylemon for resources listed [here](https://github.com/arendst/Tasmota/discussions/20466)
+Thanks to @DressyLemon for resources listed [here](https://github.com/arendst/Tasmota/discussions/20466)
 
