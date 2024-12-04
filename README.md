@@ -11,7 +11,7 @@ At the same time I had seen the IKEA tradfi buttons being used in other home aut
 The instructions set out here provided a pretty good stating point and are easy to follow. I don't know why Sonoff don't supply the bridge with the header fitted as providing the pin-outs means they know that users want to modify it. 
 https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/
 
-The only improvement to thhe procedure abouce is that I prefer the Tasmota on-line flasher as it avoids the step of searching for and downloading it ans then installing and runiining an ESP32 flasher.
+The only improvement to the procedure abouce is that I prefer the Tasmota on-line flasher as it avoids the step of searching for and downloading it ans then installing and running an ESP32 flasher.
 https://tasmota.github.io/install/
 
 Once you have got the Bridge to talk to your wifi, set it up with a static IP and remember that for later mine is 19.168.2.110.
