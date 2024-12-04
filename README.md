@@ -11,7 +11,7 @@ At the same time I had seen the IKEA tradfi buttons being used in other home aut
 The instructions set out here provided a pretty good stating point and are easy to follow. I don't know why Sonoff don't supply the bridge with the header fitted as providing the pin-outs means they know that users want to modify it. 
 https://notenoughtech.com/home-automation/tasmota-on-sonoff-zb-bridge-pro/
 
-The only improvement to the procedure abouce is that I prefer the Tasmota on-line flasher as it avoids the step of searching for and downloading it ans then installing and running an ESP32 flasher.
+The only improvement to the procedure abouce is that I prefer the Tasmota on-line flasher as it avoids the step of searching for and downloading it and then installing and running an ESP32 flasher.
 https://tasmota.github.io/install/
 
 Once you have got the Bridge to talk to your wifi, set it up with a static IP and remember that for later mine is 19.168.2.110.
@@ -65,3 +65,34 @@ One final point about updating the firmware on IKEA Tradfri buttons.
 You  can do this using the OTA function, but you have to keep pressing the button to keep the button awake until you get confirmation that the OTA update has started. Oh, and you are going to use a lot of battery as it is a very long/slow process.
 
 ![image](https://user-images.githubusercontent.com/56273663/234537357-b3986f73-ab8c-4c02-b7c6-58b889c5275e.png)
+
+## Sonoff Zigbee Pro as a Router 2024
+
+After running my Sonoff as a configurator for a few years, I upgraded my Home Assistant to HA yellow which includes its own Zigbee radio, so the Sonoff became redundant. However the Sonoff was located centrally in my house where as the Yellow was in my comms rack so Zigbee radio coverage was not as good. In order to connect all my Zigbee devices to the Yellow co-ordinator, I needed to repurpose the Sonoff Zigbee Pro as a Router.
+
+The conversion process was remarkably easy. 
+1. I used the OTA firmware update to update to Tasmota 14.3.0.7(b941400-zbbrdgpro). 
+2. Changed the Tasmota Template:
+{"NAME":"Sonoff Zigbee Pro","GPIO":[0, 0, 576, 0, 480, 0, 0, 0, 0, 1, 1, 5792, 0, 0, 0, 3552, 0, 320, 5793, 3584, 0, 640, 608, 32, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 ],"FLAG":0,"BASE":1}
+3. Download and save the following files:
+   SonoffZBPro Router HEX https://github.com/arendst/Tasmota/blob/development/tools/fw_SonoffZigbeeBridgePro_router_only_cc2652/SonoffZBPro_router_20220125.hex ;
+   Sonoff ZBPro Flasher https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/sonoff_zb_pro_flasher.be ;
+   CC2652 Flasher https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/cc2652_flasher.be ;
+   IntelHex https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/intelhex.be ;
+4. Install all the downloaded files on the Sonoff using the File Manager utility.
+5. Run these four lines of code in the Berry console to activate the HEX Firmware
+```
+import sonoff_zb_pro_flasher as cc
+cc.load("SonoffZBPro_router_20220125.hex")
+cc.check()
+cc.flash()
+```
+Wait about 5 minutes until everything has run through then power cycle the Sonoff.
+Finally press the reset button and the green LED lights, wait 5 seconds and press it again, the blue LED flashes twice and the Sonoff is in pairing mode ready to join ZHA as a router.
+
+![image](https://github.com/user-attachments/assets/413dee63-54a5-4966-942c-6122e0192bdb)
+
+
+
+Thanks to @Deressylemon for resources listed here: https://github.com/arendst/Tasmota/discussions/20466
+
