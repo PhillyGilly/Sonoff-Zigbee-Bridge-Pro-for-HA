@@ -75,12 +75,12 @@ The conversion process was remarkably easy.
 2. Changed the Tasmota Template:
 {"NAME":"Sonoff Zigbee Pro","GPIO":[0, 0, 576, 0, 480, 0, 0, 0, 0, 1, 1, 5792, 0, 0, 0, 3552, 0, 320, 5793, 3584, 0, 640, 608, 32, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0 ],"FLAG":0,"BASE":1}
 3. Download and save the following files:
-   SonoffZBPro Router HEX https://github.com/arendst/Tasmota/blob/development/tools/fw_SonoffZigbeeBridgePro_router_only_cc2652/SonoffZBPro_router_20220125.hex ;
-   Sonoff ZBPro Flasher https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/sonoff_zb_pro_flasher.be ;
-   CC2652 Flasher https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/cc2652_flasher.be ;
-   IntelHex https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/intelhex.be ;
-4. Install all the downloaded files on the Sonoff using the File Manager utility.
-5. Run these four lines of code in the Berry console to activate the HEX Firmware
+   [SonoffZBPro Router HEX](https://github.com/arendst/Tasmota/blob/development/tools/fw_SonoffZigbeeBridgePro_router_only_cc2652/SonoffZBPro_router_20220125.hex);
+   [Sonoff ZBPro Flasher](https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/sonoff_zb_pro_flasher.be);
+   [CC2652 Flasher](https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/cc2652_flasher.be);
+   [IntelHex](https://github.com/arendst/Tasmota/blob/development/tasmota/berry/zigbee/intelhex.be);
+5. Install all the downloaded files on the Sonoff using the File Manager utility.
+6. Run these four lines of code in the Berry console to activate the HEX Firmware
 ```
 import sonoff_zb_pro_flasher as cc
 cc.load("SonoffZBPro_router_20220125.hex")
@@ -94,5 +94,5 @@ Finally press the reset button and the green LED lights, wait 5 seconds and pres
 
 
 
-Thanks to @Deressylemon for resources listed here: https://github.com/arendst/Tasmota/discussions/20466
+Thanks to @Deressylemon for resources listed [here](https://github.com/arendst/Tasmota/discussions/20466)
 
