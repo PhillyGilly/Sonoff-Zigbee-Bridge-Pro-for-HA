@@ -68,7 +68,7 @@ You  can do this using the OTA function, but you have to keep pressing the butto
 
 ## Sonoff Zigbee Pro as a Router 2024
 
-After running my Sonoff as a configurator for a few years, I upgraded my Home Assistant to HA yellow which includes its own Zigbee radio, so the Sonoff became redundant. However the Sonoff was located centrally in my house where as the Yellow was in my comms rack so Zigbee radio coverage was not as good. In order to connect all my Zigbee devices to the Yellow co-ordinator, I needed to repurpose the Sonoff Zigbee Pro as a Router.
+After running my Sonoff as a coordinator for a few years, I upgraded my Home Assistant to HA yellow which includes its own Zigbee radio, so the Sonoff became redundant. However the Sonoff was located centrally in my house where as the Yellow was in my comms rack so Zigbee radio coverage was not as good. In order to connect all my Zigbee devices to the Yellow co-ordinator, I needed to repurpose the Sonoff Zigbee Pro as a Router.
 
 The conversion process was remarkably easy. 
 1. I used the OTA firmware update to update to Tasmota 14.3.0.7(b941400-zbbrdgpro). 
